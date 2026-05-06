@@ -1,54 +1,35 @@
 "use client"
 import { motion } from "framer-motion"
-import InteractiveTimeline from "@/components/interactive-timeline"
-import LiveGitHubWidget from "@/components/widgets/live-github-widget"
-import CurrentlyLearningWidget from "@/components/widgets/currently-learning-widget"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="max-w-3xl text-center mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 liquid-gradient font-sora">About Me</h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            I'm a creative technologist who bridges the gap between design and development, crafting digital experiences
-            that push the boundaries of what's possible on the web.
-          </p>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">About Me</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-100">Professional Profile</h2>
         </motion.div>
 
-        {/* Interactive Timeline */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
         >
-          <InteractiveTimeline />
+          <div className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-8 shadow-2xl shadow-slate-950/40">
+            <p className="text-slate-300 leading-7 text-lg">
+              I am a Master's student in AI for Digital Production Management at Deggendorf Institute of Technology, Germany. My work focuses on applying artificial intelligence, data analytics, and computer vision to practical industrial and production-related problems.
+            </p>
+            <p className="mt-6 text-slate-300 leading-7 text-lg">
+              Through academic projects and hands-on industrial exposure, I have worked on AI-based monitoring, model benchmarking, forecasting, production strategy, and quality-oriented workflows. I am especially interested in roles where data, AI, and manufacturing knowledge come together to support better decisions and smarter production systems.
+            </p>
+          </div>
         </motion.div>
-
-        {/* Dynamic Widgets */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <LiveGitHubWidget />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-          >
-            <CurrentlyLearningWidget />
-          </motion.div>
-        </div>
       </div>
     </section>
   )

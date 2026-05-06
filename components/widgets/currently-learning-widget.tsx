@@ -14,10 +14,10 @@ const learningData = [
 
 export default function CurrentlyLearningWidget() {
   return (
-    <Card className="glass-morphism border-white/20 hover:border-purple-400/50 transition-all duration-300">
+    <Card className="glass-morphism border-white/10 hover:border-cyan-400/40 transition-all duration-300">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-white">
-          <BookOpen className="h-5 w-5 text-purple-400" />
+        <CardTitle className="flex items-center gap-2 text-slate-100">
+          <BookOpen className="h-5 w-5 text-cyan-300" />
           Currently Learning
         </CardTitle>
       </CardHeader>
@@ -31,25 +31,25 @@ export default function CurrentlyLearningWidget() {
             className="space-y-2"
           >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-slate-100">
                 <span className="text-lg">{item.icon}</span>
-                <span className="text-white/80">{item.name}</span>
+                <span>{item.name}</span>
               </div>
-              <span className="text-sm text-white/60">{item.progress}%</span>
+              <span className="text-sm text-slate-400">{item.progress}%</span>
             </div>
-            <Progress value={item.progress} className="h-2 bg-white/10" />
+            <Progress value={item.progress} className="h-2 bg-slate-800" />
           </motion.div>
         ))}
 
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="mt-6 p-3 rounded-lg bg-gradient-to-r from-purple-400/20 to-cyan-400/20 border border-white/10"
+          className="mt-6 rounded-3xl border border-slate-800 bg-slate-950/80 p-4"
         >
-          <div className="flex items-center gap-2 mb-2">
-            <Zap className="h-4 w-4 text-yellow-400" />
-            <span className="text-white font-semibold">Next Up:</span>
+          <div className="flex items-center gap-2 mb-2 text-slate-100">
+            <Zap className="h-4 w-4 text-cyan-300" />
+            <span className="font-semibold">Next up:</span>
           </div>
-          <div className="text-white/80">Exploring quantum computing applications in web development</div>
+          <div className="text-slate-400">Exploring production-focused AI workflows and analytics automation</div>
         </motion.div>
       </CardContent>
     </Card>

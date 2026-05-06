@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Sora } from "next/font/google"
-import "./globals.css"
+import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -9,16 +9,16 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" })
 
 export const metadata: Metadata = {
-  title: "John Doe - Creative Technologist",
-  description: "Inventing tomorrow's web, one line of code at a time.",
-  keywords: ["developer", "portfolio", "full-stack", "creative technologist"],
-  authors: [{ name: "John Doe" }],
+  title: "Yaswitha Pallela — Applied AI & Data Portfolio",
+  description: "Yaswitha Pallela is a Master's student in Applied Artificial Intelligence for Digital Production Management, showcasing AI, data analytics, and intelligent production systems.",
+  keywords: ["AI", "data analytics", "portfolio", "digital production management", "internship"],
+  authors: [{ name: "Yaswitha Pallela" }],
   openGraph: {
-    title: "John Doe - Creative Technologist",
-    description: "Inventing tomorrow's web, one line of code at a time.",
+    title: "Yaswitha Pallela — Applied AI & Data Portfolio",
+    description: "Exploring AI, data analytics, and intelligent production systems through real-world projects.",
     type: "website",
   },
-    generator: 'senotron'
+  generator: "senotron",
 }
 
 export default function RootLayout({
