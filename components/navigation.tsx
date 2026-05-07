@@ -9,15 +9,20 @@ import { useTheme } from "next-themes"
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { theme, resolvedTheme, setTheme } = useTheme()
 
   useEffect(() => {
+    setMounted(true)
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const currentTheme = theme === "system" ? resolvedTheme : theme
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -49,14 +54,18 @@ export default function Navigation() {
                 {item.name}
               </a>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-slate-100 hover:text-cyan-300"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+            {mounted ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+                className="text-slate-100 hover:text-cyan-300"
+              >
+                {currentTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+            ) : (
+              <Button variant="ghost" size="icon" className="text-slate-100 opacity-0 pointer-events-none" aria-hidden="true" />
+            )}
           </div>
 
           <div className="md:hidden">

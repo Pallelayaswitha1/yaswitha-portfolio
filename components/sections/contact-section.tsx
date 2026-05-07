@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Globe } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,19 +16,15 @@ export default function ContactSection() {
     email: "",
     message: "",
   })
-  const { toast } = useToast()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    toast({
-      title: "Message sent",
-      description: "Your message has been received. I will get back to you shortly.",
-    })
-
-    setFormData({ name: "", email: "", message: "" })
+    const subject = encodeURIComponent("Portfolio Contact - Yaswitha Pallela")
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )
+    window.location.href = `mailto:pallelayaswitha20@gmail.com?subject=${subject}&body=${body}`
   }
 
   return (

@@ -65,10 +65,10 @@ export default function HeroSection() {
             <div className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-8 shadow-2xl shadow-slate-950/40">
               <div className="w-64 h-64 rounded-full bg-slate-800 border-2 border-dashed border-cyan-500/30 flex items-center justify-center text-slate-500">
                 <img
-  src="/profile.jpg.png"
-  alt="Yaswitha Pallela"
-  className="w-full h-full object-cover rounded-full"
-/>
+                  src="/profile.jpg.png"
+                  alt="Yaswitha Pallela"
+                  className="w-full h-full rounded-full object-cover object-[center_20%]"
+                />
               </div>
             </div>
           </motion.div>

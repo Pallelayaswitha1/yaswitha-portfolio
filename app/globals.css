@@ -57,7 +57,11 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-950 text-slate-100 antialiased;
+    @apply bg-slate-50 text-slate-950 antialiased;
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  }
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
     background: radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 30%),
       linear-gradient(180deg, #020617 0%, #071023 100%);
   }
