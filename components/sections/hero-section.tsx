@@ -39,7 +39,7 @@ export default function HeroSection() {
                 size="lg"
                 className="rounded-full border-cyan-400/30 bg-white/10 text-slate-950 hover:bg-cyan-500/10 dark:border-cyan-500/30 dark:bg-slate-950/80 dark:text-slate-100"
               >
-                <a href="/yaswitha_resume%20(2).pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Yaswitha_Resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
                 </a>
