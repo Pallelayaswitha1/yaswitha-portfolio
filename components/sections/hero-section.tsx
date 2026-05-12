@@ -65,7 +65,7 @@ export default function HeroSection() {
                 <img
                   src="/profile.png"
                   alt="Portrait of Yaswitha Pallela"
-                  className="h-full w-full object-cover object-center"
+                  className="w-full h-full object-cover rounded-full object-[center_15%]"
                 />
               </div>
             </div>
