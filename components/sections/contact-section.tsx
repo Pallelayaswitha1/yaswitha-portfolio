@@ -36,11 +36,14 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Reach Out</p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-100">Contact</h2>
-          <p className="mt-6 text-slate-300 leading-8">
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-500/80">Reach Out</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-950 dark:text-slate-100">Contact</h2>
+          <p className="mt-6 text-slate-700 dark:text-slate-300 leading-8">
             I am open to internship and working student opportunities in AI, analytics and production management.
             Send a message below to discuss collaboration or next steps.
+          </p>
+          <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
+            Clicking Send message will open your email client with your message pre-filled.
           </p>
         </motion.div>
 
@@ -50,9 +53,9 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Card className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-6 shadow-2xl shadow-slate-950/30">
+            <Card className="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-slate-950/30">
               <CardHeader>
-                <CardTitle className="text-slate-100">Send a message</CardTitle>
+                <CardTitle className="text-slate-950 dark:text-slate-100">Send a message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -60,7 +63,7 @@ export default function ContactSection() {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-slate-950/80 text-slate-100 placeholder:text-slate-500"
+                    className="bg-slate-100 text-slate-950 placeholder:text-slate-500 dark:bg-slate-950/80 dark:text-slate-100 dark:placeholder:text-slate-500"
                     required
                   />
                   <Input
@@ -68,14 +71,14 @@ export default function ContactSection() {
                     placeholder="Email address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-slate-950/80 text-slate-100 placeholder:text-slate-500"
+                    className="bg-slate-100 text-slate-950 placeholder:text-slate-500 dark:bg-slate-950/80 dark:text-slate-100 dark:placeholder:text-slate-500"
                     required
                   />
                   <Textarea
                     placeholder="Your message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-slate-950/80 text-slate-100 placeholder:text-slate-500 min-h-[180px]"
+                    className="bg-slate-100 text-slate-950 placeholder:text-slate-500 min-h-[180px] dark:bg-slate-950/80 dark:text-slate-100 dark:placeholder:text-slate-500"
                     required
                   />
                   <Button type="submit" className="w-full rounded-full bg-cyan-500 px-6 py-3 font-semibold text-slate-950 hover:bg-cyan-400">
@@ -92,48 +95,48 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <Card className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-6 shadow-2xl shadow-slate-950/30">
+            <Card className="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-slate-950/30">
               <CardHeader>
-                <CardTitle className="text-slate-100">Contact details</CardTitle>
+                <CardTitle className="text-slate-950 dark:text-slate-100">Contact details</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-5 text-slate-300">
+              <CardContent className="space-y-5 text-slate-700 dark:text-slate-300">
                 <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-cyan-300" />
+                  <Mail className="h-5 w-5 text-cyan-500" />
                   <div>
-                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500">Email</p>
-                    <p className="mt-1 font-medium text-slate-100">pallelayaswitha20@gmail.com</p>
+                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Email</p>
+                    <p className="mt-1 font-medium text-slate-950 dark:text-slate-100">pallelayaswitha20@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-cyan-300" />
+                  <MapPin className="h-5 w-5 text-cyan-500" />
                   <div>
-                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500">Location</p>
-                    <p className="mt-1 font-medium text-slate-100">Germany</p>
+                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Location</p>
+                    <p className="mt-1 font-medium text-slate-950 dark:text-slate-100">Germany</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Globe className="h-5 w-5 text-cyan-300" />
+                  <Globe className="h-5 w-5 text-cyan-500" />
                   <div>
-                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500">LinkedIn</p>
-                    <p className="mt-1 font-medium text-slate-100">www.linkedin.com/in/yaswitha-pallela-2a0y</p>
+                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">LinkedIn</p>
+                    <p className="mt-1 font-medium text-slate-950 dark:text-slate-100">www.linkedin.com/in/yaswitha-pallela-2a0y</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Globe className="h-5 w-5 text-cyan-300" />
+                  <Globe className="h-5 w-5 text-cyan-500" />
                   <div>
-                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500">GitHub</p>
-                    <p className="mt-1 font-medium text-slate-100">https://github.com/pallelayaswitha1</p>
+                    <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">GitHub</p>
+                    <p className="mt-1 font-medium text-slate-950 dark:text-slate-100">https://github.com/pallelayaswitha1</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-6 shadow-2xl shadow-slate-950/30">
+            <Card className="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-slate-950/30">
               <CardHeader>
-                <CardTitle className="text-slate-100">Availability</CardTitle>
+                <CardTitle className="text-slate-950 dark:text-slate-100">Availability</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-300 leading-7">
+                <p className="text-slate-700 dark:text-slate-300 leading-7">
                   Working Student 20h/week or 6-month full-time internship
                 </p>
               </CardContent>

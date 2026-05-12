@@ -31,9 +31,9 @@ export default function SkillsSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Core Skill Areas</p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-100">Skills</h2>
-          <p className="mt-6 text-slate-300 leading-8">
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-500/80">Core Skill Areas</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-950 dark:text-slate-100">Skills</h2>
+          <p className="mt-6 text-slate-700 dark:text-slate-300 leading-8">
             A focused skill set for applied AI, data analytics, and intelligent production environments.
           </p>
         </motion.div>
@@ -45,12 +45,12 @@ export default function SkillsSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
-              className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-6 shadow-2xl shadow-slate-950/30"
+              className="rounded-[2rem] border border-slate-200/70 bg-white/95 p-6 shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-slate-950/30"
             >
-              <h3 className="text-xl font-semibold text-slate-100 mb-4">{group.title}</h3>
-              <ul className="space-y-3 text-slate-300">
+              <h3 className="text-xl font-semibold text-slate-950 dark:text-slate-100 mb-4">{group.title}</h3>
+              <ul className="space-y-3 text-slate-700 dark:text-slate-300">
                 {group.skills.map((skill) => (
-                  <li key={skill} className="rounded-3xl border border-slate-800 bg-slate-950/80 px-4 py-3">
+                  <li key={skill} className="rounded-3xl border border-slate-200 bg-slate-100 px-4 py-3 dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-300">
                     {skill}
                   </li>
                 ))}

@@ -23,6 +23,7 @@ export default function Navigation() {
   }, [])
 
   const currentTheme = theme === "system" ? resolvedTheme : theme
+  const isDark = currentTheme === "dark"
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -34,23 +35,34 @@ export default function Navigation() {
     { name: "Contact", href: "#contact" },
   ]
 
+  const navBackground = scrolled
+    ? isDark
+      ? "bg-slate-950/95"
+      : "bg-white/95"
+    : isDark
+    ? "bg-transparent"
+    : "bg-white/80"
+
+  const navText = isDark ? "text-slate-100" : "text-slate-950"
+  const navLink = isDark ? "text-slate-300 hover:text-cyan-300" : "text-slate-600 hover:text-cyan-600"
+  const navBorder = isDark ? "border-white/10" : "border-slate-200/70"
+  const mobileBg = isDark ? "bg-slate-950/95" : "bg-white/95"
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-all duration-300 ${
-        scrolled ? "bg-slate-950/95 backdrop-blur-xl" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 border-b ${navBorder} transition-all duration-300 ${navBackground}`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
-          <div className="text-base font-semibold tracking-wide uppercase text-slate-100">
+          <div className={`text-base font-semibold tracking-wide uppercase ${navText}`}>
             Yaswitha Pallela
           </div>
 
-          <div className="hidden md:flex items-center gap-8 text-slate-300">
+          <div className={`hidden md:flex items-center gap-8 ${navText}`}>
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="hover:text-cyan-300 transition-colors duration-200">
+              <a key={item.name} href={item.href} className={`${navLink} transition-colors duration-200`}>
                 {item.name}
               </a>
             ))}
@@ -59,7 +71,7 @@ export default function Navigation() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-                className="text-slate-100 hover:text-cyan-300"
+                className={isDark ? "text-slate-100 hover:text-cyan-300" : "text-slate-950 hover:text-cyan-600"}
               >
                 {currentTheme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
@@ -69,7 +81,7 @@ export default function Navigation() {
           </div>
 
           <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-slate-100">
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className={isDark ? "text-slate-100" : "text-slate-950"}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -79,13 +91,13 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 rounded-3xl border border-white/10 bg-slate-950/95 p-4 backdrop-blur-xl"
+            className={`md:hidden mt-4 rounded-3xl border ${navBorder} ${mobileBg} p-4 backdrop-blur-xl`}
           >
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-3 text-slate-200 hover:text-cyan-300 transition-colors"
+                className={`block py-3 ${navText} ${isDark ? "hover:text-cyan-300" : "hover:text-cyan-600"} transition-colors`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

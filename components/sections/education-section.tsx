@@ -28,8 +28,8 @@ export default function EducationSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Academic Background</p>
-          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-100">Education</h2>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-500/80">Academic Background</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-slate-950 dark:text-slate-100">Education</h2>
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-8">
@@ -39,14 +39,14 @@ export default function EducationSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
-              className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-8 shadow-2xl shadow-slate-950/30"
+              className="rounded-[2rem] border border-slate-200/70 bg-white/95 p-8 shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-slate-900/90 dark:shadow-slate-950/30"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 className="text-xl font-semibold text-slate-100">{edu.degree}</h3>
-                <p className="text-sm text-cyan-300/80 mt-1 sm:mt-0">{edu.period}</p>
+                <h3 className="text-xl font-semibold text-slate-950 dark:text-slate-100">{edu.degree}</h3>
+                <p className="text-sm text-cyan-500/80 mt-1 sm:mt-0">{edu.period}</p>
               </div>
-              <p className="text-slate-300 mb-2">{edu.institution}, {edu.location}</p>
-              {edu.details && <p className="text-slate-400 text-sm">{edu.details}</p>}
+              <p className="text-slate-700 dark:text-slate-300 mb-2">{edu.institution}, {edu.location}</p>
+              {edu.details && <p className="text-slate-500 dark:text-slate-400 text-sm">{edu.details}</p>}
             </motion.div>
           ))}
         </div>
